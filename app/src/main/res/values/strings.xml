@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JocPPA</string>
+<string name="stay">stay</string>
+    <string name="hit">hit</string>
+    <string name="zero">0</string>
+    <string name="blank">Welcome</string>
+    <string name="deal">deal</string>
+
+</resources>
