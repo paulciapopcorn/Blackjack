@@ -337,37 +337,50 @@ public class MainActivity extends AppCompatActivity {
                                         numberOfAcesHouse++;
                                     }
 
-                                    if(Integer.parseInt(text2.getText().toString())>21 && numberOfAcesHouse!=0){
-                                        text2.setText(Integer.toString(Integer.parseInt(text1.getText().toString())-10));
+                                    if(Integer.parseInt(text2.getText().toString())>=17 && numberOfAcesHouse!=0){
+                                        text2.setText(Integer.toString(Integer.parseInt(text2.getText().toString())-10));
                                         numberOfAcesHouse--;
                                     }
 
+                                    if(Integer.parseInt(text2.getText().toString())>=17 && numberOfAcesHouse==0){
 
 
-                                    if (Integer.parseInt(text2.getText().toString()) > Integer.parseInt(text1.getText().toString()) && Integer.parseInt(text2.getText().toString()) < 22) {
+                                        if (Integer.parseInt(text2.getText().toString()) > Integer.parseInt(text1.getText().toString()) && Integer.parseInt(text2.getText().toString()) < 22) {
 
-                                        String message = "Dealer wins with " + text2.getText().toString();
-                                        Message msg = new Message();
-                                        msg.obj = message;
-                                        handler.sendMessage(msg);
-                                        draws1 = 15;
-                                        deal.setVisibility(View.VISIBLE);
-                                        delay();
+                                            String message = "Dealer wins with " + text2.getText().toString();
+                                            Message msg = new Message();
+                                            msg.obj = message;
+                                            handler.sendMessage(msg);
+                                            draws1 = 15;
+                                            deal.setVisibility(View.VISIBLE);
+                                            delay();
+
+                                        }
+
+
+
+                                        if (Integer.parseInt(text2.getText().toString()) > 21 || Integer.parseInt(text1.getText().toString()) > Integer.parseInt(text2.getText().toString())) {
+                                            String message = "Player wins with " + text1.getText().toString();
+
+                                            Message msg = new Message();
+                                            msg.obj = message;
+                                            handler.sendMessage(msg);
+                                            draws1 = 15;
+                                            deal.setVisibility(View.VISIBLE);
+                                            delay();
+
+
+                                        }
+
+
+
 
                                     }
 
-                                    if (Integer.parseInt(text2.getText().toString()) > 21 && numberOfAcesHouse==0) {
-                                        String message = "Player wins with " + text1.getText().toString();
-
-                                        Message msg = new Message();
-                                        msg.obj = message;
-                                        handler.sendMessage(msg);
-                                        draws1 = 15;
-                                        deal.setVisibility(View.VISIBLE);
-                                        delay();
 
 
-                                    }
+
+
                                 }
                             });
 
